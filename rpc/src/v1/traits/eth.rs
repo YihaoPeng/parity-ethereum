@@ -172,7 +172,8 @@ build_rpc_trait! {
 		fn submit_work(&self, H64, H256, H256) -> Result<bool>;
 
 		/// Used for submitting a proof-of-work solution (more details in the response than `eth_submitWork`).
-		#[rpc(name = "eth_submitWorkDetail")]
+		/// It does not currently belong to any EIP proposal, so it has a `parity_` namespace.
+		#[rpc(name = "parity_submitWorkDetail")]
 		fn submit_work_detail(&self, H64, H256, H256) -> Result<SubmitDetailResult>;
 
 		/// Used for submitting mining hashrate.
